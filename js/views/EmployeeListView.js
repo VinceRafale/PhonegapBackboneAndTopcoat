@@ -7,6 +7,7 @@ app.views.EmployeeListView = Backbone.View.extend({
     initialize:function () {
         var self = this;
         this.model.on("reset", this.render, this);
+      
         this.model.on("add", function (employee) {
             self.$el.append(new app.views.EmployeeListItemView({model:employee}).render().el);
         });

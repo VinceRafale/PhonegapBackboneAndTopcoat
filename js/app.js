@@ -6,7 +6,7 @@ var app = {
     adapters: {}
 };
 
-$(document).on("ready", function () {
+$(document).on("ready", function () {    
     app.router = new app.routers.AppRouter();
     app.utils.templates.load(["HomeView", "EmployeeView", "EmployeeListItemView", "ReportsView", "MapView"],
         function () {
@@ -14,3 +14,8 @@ $(document).on("ready", function () {
             Backbone.history.start();
         });
 });
+
+window.addEventListener('load', function() {
+    new FastClick(document.body);
+    alert("Fast Click: Loaded!");
+}, false);
